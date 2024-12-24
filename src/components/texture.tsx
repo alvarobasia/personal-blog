@@ -11,15 +11,23 @@ export function Texture() {
     rect.setAttribute("width", window.innerWidth.toString());
     rect.setAttribute("height", window.innerHeight.toString());
     window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [rectRef]);
 
   const handleResize = () => {
     const rect = rectRef.current;
     if (!rect) return;
 
+    console.log("resize");
+
     rect.setAttribute("width", window.innerWidth.toString());
     rect.setAttribute("height", window.innerHeight.toString());
   };
+
+  handleResize();
 
   return (
     <svg
