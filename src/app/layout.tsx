@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/theme-provider";
+
 import {
   Geist,
   Geist_Mono,
   Lexend_Deca,
   DM_Serif_Display,
+  Source_Code_Pro,
 } from "next/font/google";
 import "./globals.css";
 import { Texture } from "@/components/texture";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const sourceCodePro = Source_Code_Pro({
+  variable: "--font-source-code-pro",
   subsets: ["latin"],
 });
 
@@ -40,11 +48,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${lexantDeca.variable} ${dmSerifDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lexantDeca.variable} ${dmSerifDisplay.variable} ${sourceCodePro.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
         <Texture />
       </body>
     </html>
