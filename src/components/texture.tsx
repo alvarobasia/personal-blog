@@ -21,8 +21,6 @@ export function Texture() {
     const rect = rectRef.current;
     if (!rect) return;
 
-    console.log("resize");
-
     rect.setAttribute("width", window.innerWidth.toString());
     rect.setAttribute("height", window.innerHeight.toString());
   };
