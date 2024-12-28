@@ -5,7 +5,7 @@ export default function LatestPosts() {
   const latestPosts = getBlogPosts();
 
   return (
-    <div className="w-full h-full px-10 flex flex-col items-center">
+    <div className="w-full h-full px-10 max-[720px]:px-2 flex flex-col items-center">
       {latestPosts
         .sort((a, b) => {
           if (
@@ -21,7 +21,7 @@ export default function LatestPosts() {
               className="group text-wrap max-w-[80%] my-10 border-2 p-4 rounded-xl border-blue-500 cursor-pointer hover:bg-gray-900 transition-all duration-300"
             >
               <Link href={"#"}>
-                <h3 className="font-bold text-[30px] font-sans py-2 leading-5  group-hover:italic group-hover:text-blue-500">
+                <h3 className="font-bold text-[30px] font-sans py-2 leading-8  group-hover:italic group-hover:text-blue-500">
                   {post.metadata.title}
                 </h3>
               </Link>

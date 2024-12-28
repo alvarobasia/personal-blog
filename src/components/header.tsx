@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className="dark:bg-black w-[100vw] h-10 border-b-2 p-8 border-blue-500 flex items-center justify-between font-sans max-[720px]:justify-center">
+    <header className="dark:bg-black w-[100vw] px-8 m-0 h-fit border-b-2 border-blue-500 flex items-center justify-between font-sans max-[720px]:justify-center">
       <AsideMenu />
       <div className="flex items-center p-4">
         <div className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center">
@@ -30,10 +30,12 @@ export default function Header() {
           </span>
         </div>
         <div className="flex flex-col ml-4">
-          <h1 className="text-[24px]">
+          <h1 className="text-[24px] max-[720px]:text-[20px]">
             Álvaro <span className="font-mono italic">dev</span>
           </h1>
-          <p className="font-mono text-slate-600 italic">Fullstack developer</p>
+          <p className="font-mono text-slate-600 italic max-[720px]:text-[12px]">
+            Fullstack developer
+          </p>
         </div>
       </div>
       <div className="max-[720px]:hidden flex flex-row items-center space-x-4">
