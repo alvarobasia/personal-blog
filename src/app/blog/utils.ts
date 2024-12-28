@@ -42,16 +42,16 @@ export function formatedDate(date: string, includeRelative = false) {
   const dayAgo = currentDate.getDate() - targetDate.getDate();
   let formattedDate = "";
   if (yearAgo > 0) {
-    formattedDate = `${yearAgo} year${yearAgo > 1 ? "s" : ""} ago`;
+    formattedDate = `${yearAgo} ano${yearAgo > 1 ? "s" : ""} atrás`;
   } else if (monthAgo > 0) {
-    formattedDate = `${monthAgo} month${monthAgo > 1 ? "s" : ""} ago`;
+    formattedDate = `${monthAgo} ${monthAgo > 1 ? "meses" : "mês"} atrás`;
   } else if (dayAgo > 0) {
-    formattedDate = `${dayAgo} day${dayAgo > 1 ? "s" : ""} ago`;
+    formattedDate = `${dayAgo} dia${dayAgo > 1 ? "s" : ""} atrás`;
   } else {
-    formattedDate = "Today";
+    formattedDate = "Hoje";
   }
 
-  const fullDate = targetDate.toLocaleDateString("en-US", {
+  const fullDate = targetDate.toLocaleDateString("pt-BR", {
     year: "numeric",
     month: "long",
     day: "numeric",
