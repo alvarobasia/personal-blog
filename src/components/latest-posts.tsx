@@ -28,6 +28,18 @@ export default function LatestPosts() {
               <p className="leading-5 my-5 font-sans text-slate-600 italic">
                 {post.metadata.summary}
               </p>
+              <div className="flex flex-wrap gap-2 my-4">
+                {post.metadata.category.map((category: string) => {
+                  return (
+                    <p
+                      key={category}
+                      className="text-md border border-blue-500  p-1 dark:text-white rounded-md font-sans hover:bg-blue-500 group-hover:text-white"
+                    >
+                      {`#${category}`}
+                    </p>
+                  );
+                })}
+              </div>
               <p className="text-sm text-muted-foreground font-sans">
                 {formatedDate(post.metadata.publishedAt, true)}
               </p>
