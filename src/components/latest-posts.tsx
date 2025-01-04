@@ -5,7 +5,7 @@ export default function LatestPosts() {
   const latestPosts = getBlogPosts();
 
   return (
-    <div className="w-full h-full px-10 max-[720px]:px-2 flex flex-col items-center">
+    <div className="w-[100vw] grow px-10 py-0 m-0 max-[720px]:px-2 flex flex-col items-center">
       {latestPosts
         .sort((a, b) => {
           if (
