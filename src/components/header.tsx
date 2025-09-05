@@ -11,7 +11,6 @@ const linkClass = {
 
 export default function Header() {
   const { setTheme, theme } = useTheme();
-
   const switchTheme = () => {
     if (theme === "dark") {
       setTheme("light");
